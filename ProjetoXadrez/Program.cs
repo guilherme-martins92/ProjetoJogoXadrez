@@ -8,6 +8,7 @@ namespace ProjetoXadrez
     {
         static void Main(string[] args)
         {
+            /*
             try
             {
                 Tabuleiro tab = new Tabuleiro(8, 8);
@@ -24,8 +25,12 @@ namespace ProjetoXadrez
             {
                 Console.WriteLine(e.Message);
             }
-
+            */
+            PosicaoXadrez pos = new PosicaoXadrez('a', 1);
+            Console.WriteLine(pos);
+            Console.WriteLine(pos.toPosicao());
             Console.ReadLine();
+
         }
     }
 }
