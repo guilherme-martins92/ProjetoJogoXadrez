@@ -1,0 +1,13 @@
+F:\Cursos\C# COMPLETO 2020 Programação Orientada a Objetos + Projetos\Exercicios\ProjetoXadrez\ProjetoXadrez\bin\Debug\netcoreapp3.1\ProjetoXadrez.exe
+F:\Cursos\C# COMPLETO 2020 Programação Orientada a Objetos + Projetos\Exercicios\ProjetoXadrez\ProjetoXadrez\bin\Debug\netcoreapp3.1\ProjetoXadrez.deps.json
+F:\Cursos\C# COMPLETO 2020 Programação Orientada a Objetos + Projetos\Exercicios\ProjetoXadrez\ProjetoXadrez\bin\Debug\netcoreapp3.1\ProjetoXadrez.runtimeconfig.json
+F:\Cursos\C# COMPLETO 2020 Programação Orientada a Objetos + Projetos\Exercicios\ProjetoXadrez\ProjetoXadrez\bin\Debug\netcoreapp3.1\ProjetoXadrez.runtimeconfig.dev.json
+F:\Cursos\C# COMPLETO 2020 Programação Orientada a Objetos + Projetos\Exercicios\ProjetoXadrez\ProjetoXadrez\bin\Debug\netcoreapp3.1\ProjetoXadrez.dll
+F:\Cursos\C# COMPLETO 2020 Programação Orientada a Objetos + Projetos\Exercicios\ProjetoXadrez\ProjetoXadrez\bin\Debug\netcoreapp3.1\ProjetoXadrez.pdb
+F:\Cursos\C# COMPLETO 2020 Programação Orientada a Objetos + Projetos\Exercicios\ProjetoXadrez\ProjetoXadrez\obj\Debug\netcoreapp3.1\ProjetoXadrez.csprojAssemblyReference.cache
+F:\Cursos\C# COMPLETO 2020 Programação Orientada a Objetos + Projetos\Exercicios\ProjetoXadrez\ProjetoXadrez\obj\Debug\netcoreapp3.1\ProjetoXadrez.AssemblyInfoInputs.cache
+F:\Cursos\C# COMPLETO 2020 Programação Orientada a Objetos + Projetos\Exercicios\ProjetoXadrez\ProjetoXadrez\obj\Debug\netcoreapp3.1\ProjetoXadrez.AssemblyInfo.cs
+F:\Cursos\C# COMPLETO 2020 Programação Orientada a Objetos + Projetos\Exercicios\ProjetoXadrez\ProjetoXadrez\obj\Debug\netcoreapp3.1\ProjetoXadrez.csproj.CoreCompileInputs.cache
+F:\Cursos\C# COMPLETO 2020 Programação Orientada a Objetos + Projetos\Exercicios\ProjetoXadrez\ProjetoXadrez\obj\Debug\netcoreapp3.1\ProjetoXadrez.dll
+F:\Cursos\C# COMPLETO 2020 Programação Orientada a Objetos + Projetos\Exercicios\ProjetoXadrez\ProjetoXadrez\obj\Debug\netcoreapp3.1\ProjetoXadrez.pdb
+F:\Cursos\C# COMPLETO 2020 Programação Orientada a Objetos + Projetos\Exercicios\ProjetoXadrez\ProjetoXadrez\obj\Debug\netcoreapp3.1\ProjetoXadrez.genruntimeconfig.cache

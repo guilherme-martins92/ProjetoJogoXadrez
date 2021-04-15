@@ -1,5 +1,5 @@
 ﻿
-namespace ProjetoXadrez.Tabuleiro
+namespace ProjetoXadrez.tabuleiro
 {
     class Posicao
     {
@@ -10,6 +10,11 @@ namespace ProjetoXadrez.Tabuleiro
         {
             this.Linha = linha;
             this.Coluna = coluna;
+        }
+
+        public override string ToString()
+        {
+            return this.Linha + ", " + this.Coluna;
         }
 
     }

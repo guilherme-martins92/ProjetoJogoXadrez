@@ -1,4 +1,5 @@
 ﻿using System;
+using ProjetoXadrez.tabuleiro;
 
 namespace ProjetoXadrez
 {
@@ -6,7 +7,8 @@ namespace ProjetoXadrez
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Tabuleiro tab = new Tabuleiro(8, 8);
+
         }
     }
 }
