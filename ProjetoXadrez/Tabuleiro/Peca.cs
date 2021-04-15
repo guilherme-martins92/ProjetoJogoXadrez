@@ -8,9 +8,9 @@ namespace ProjetoXadrez.tabuleiro
         public int QuantidadeDeMovimentos { get; protected set; }
         public Tabuleiro Tab { get; protected set; }
 
-        public Peca(Posicao posicao, Cor cor, Tabuleiro tab)
+        public Peca(Cor cor, Tabuleiro tab)
         {
-            this.Posicao = posicao;
+            this.Posicao = null;
             this.Tab = tab;
             this.Cor = cor;
             this.QuantidadeDeMovimentos = 0;
