@@ -15,5 +15,10 @@ namespace ProjetoXadrez.tabuleiro
             this.Cor = cor;
             this.QuantidadeDeMovimentos = 0;
         }
+
+        public void IncrementarQtdMovimento()
+        {
+            this.QuantidadeDeMovimentos++;
+        }
     }
 }
