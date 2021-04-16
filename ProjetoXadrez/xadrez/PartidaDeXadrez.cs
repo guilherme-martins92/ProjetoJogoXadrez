@@ -119,8 +119,15 @@ namespace ProjetoXadrez.xadrez
                 xeque = false;
             }
 
-            this.Turno++;
-            this.MudaJogador();
+            if (TestarXequeMate(Adversaria(JogadorAtual)))
+            {
+                Terminada = true;
+            }
+            else
+            {
+                this.Turno++;
+                this.MudaJogador();
+            }
         }
 
 
@@ -134,6 +141,38 @@ namespace ProjetoXadrez.xadrez
             {
                 this.JogadorAtual = Cor.Branca;
             }
+        }
+
+        public bool TestarXequeMate(Cor cor)
+        {
+            if (!estaEmCheque(cor))
+            {
+                return false;
+            }
+
+            foreach (Peca x in pecasEmJogo(cor))
+            {
+                bool[,] mat = x.MovimentosPossiveis();
+                for (int i = 0; i < Tab.Linhas; i++)
+                {
+                    for (int j = 0; j < Tab.Colunas; j++)
+                    {
+                        if (mat[i, j])
+                        {
+                            Posicao origem = x.Posicao;
+                            Posicao destino = new Posicao(i, j);
+                            Peca pecaCapturada = ExecutaMovimento(origem, destino);
+                            bool testeXeque = estaEmCheque(cor);
+                            desfazMovimento(origem, destino, pecaCapturada);
+                            if (!testeXeque)
+                            {
+                                return false;
+                            }
+                        }
+                    }
+                }
+            }
+            return true;
         }
 
         public void ValidarPosicaoDeOrigem(Posicao pos)
