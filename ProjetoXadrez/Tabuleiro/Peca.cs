@@ -21,6 +21,11 @@ namespace ProjetoXadrez.tabuleiro
             this.QuantidadeDeMovimentos++;
         }
 
+        public void DecrementarQtdMovimento()
+        {
+            this.QuantidadeDeMovimentos--;
+        }
+
         public bool ExisteMovimentosPossiveis()
         {
             bool[,] mat = MovimentosPossiveis();

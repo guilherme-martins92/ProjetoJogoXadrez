@@ -14,6 +14,8 @@ namespace ProjetoXadrez.xadrez
         private HashSet<Peca> Pecas;
         private HashSet<Peca> Capturada;
 
+        public bool xeque { get; private set; }
+
         public PartidaDeXadrez()
         {
             this.Tab = new Tabuleiro(8, 8);
@@ -22,11 +24,56 @@ namespace ProjetoXadrez.xadrez
             this.Terminada = false;
             this.Pecas = new HashSet<Peca>();
             this.Capturada = new HashSet<Peca>();
-
+            this.xeque = false;
             this.ColocarPecas();
         }
 
-        public void ExecutaMovimento(Posicao origem, Posicao destino)
+        private Cor Adversaria(Cor cor)
+        {
+            if (cor == Cor.Branca)
+            {
+                return Cor.Preta;
+            }
+            else
+            {
+                return Cor.Branca;
+            }
+        }
+
+        private Peca Rei(Cor cor)
+        {
+            foreach (Peca x in pecasEmJogo(cor))
+            {
+                if (x is Rei)
+                {
+                    return x;
+                }
+            }
+            return null;
+        }
+
+        public bool estaEmCheque(Cor cor)
+        {
+            Peca R = Rei(cor);
+
+            if (R == null)
+            {
+                throw new TabuleiroException("Não tem Rei da cor " + cor + " no tabuleiro"!);
+            }
+            foreach (Peca x in pecasEmJogo(Adversaria(cor)))
+            {
+                bool[,] mat = x.MovimentosPossiveis();
+
+                if (mat[R.Posicao.Linha, R.Posicao.Coluna])
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        public Peca ExecutaMovimento(Posicao origem, Posicao destino)
         {
             Peca p = Tab.RetirarPeca(origem);
             p.IncrementarQtdMovimento();
@@ -37,14 +84,45 @@ namespace ProjetoXadrez.xadrez
             {
                 Capturada.Add(pecaCapturada);
             }
+            return pecaCapturada;
+        }
+
+        public void desfazMovimento(Posicao origem, Posicao destino, Peca pecaCapturada)
+        {
+            Peca p = Tab.RetirarPeca(destino);
+            p.DecrementarQtdMovimento();
+
+            if (pecaCapturada != null)
+            {
+                Tab.ColocarPeca(pecaCapturada, destino);
+                Capturada.Remove(pecaCapturada);
+            }
+
+            Tab.ColocarPeca(p, origem);
         }
 
         public void RealizaJogada(Posicao origem, Posicao destino)
         {
-            this.ExecutaMovimento(origem, destino);
+            Peca pecaCapturada = this.ExecutaMovimento(origem, destino);
+
+            if (estaEmCheque(JogadorAtual))
+            {
+                desfazMovimento(origem, destino, pecaCapturada);
+                throw new TabuleiroException("Você não pode se colocar em cheque!");
+            }
+            if (estaEmCheque(Adversaria(JogadorAtual)))
+            {
+                xeque = true;
+            }
+            else
+            {
+                xeque = false;
+            }
+
             this.Turno++;
             this.MudaJogador();
         }
+
 
         private void MudaJogador()
         {
